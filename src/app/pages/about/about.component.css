@@ -1,3 +1,4 @@
+/* 🔹 Contenedor Principal */
 .about-container {
     width: 90%;
     max-width: 1200px;
@@ -20,6 +21,11 @@
     width: 45%;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
 }
 
 .about-text h1 {
@@ -51,7 +57,7 @@
 
 .about-list li {
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 12px;
     background: var(--bg-primary);
     border-radius: 8px;
     margin-bottom: 10px;
@@ -59,6 +65,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.about-list li:hover {
+    transform: translateX(5px);
 }
 
 /* ✅ Grid de Servicios */
@@ -104,22 +115,23 @@
     transform: scale(1.05);
 }
 
+/* ✅ Sección de Comunidad */
 .community-section {
     text-align: center;
-    margin-top: 3rem;  /* Espaciado superior */
+    margin-top: 3rem;  
     padding: 2rem;
 }
 
 .community-section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem; /* Espaciado inferior */
+    margin-bottom: 1rem; 
 }
 
 .community-section p {
     font-size: 1.2rem;
-    color: #d1d1d1;
+    color: var(--text-primary);
     max-width: 700px;
-    margin: 0 auto 2rem auto; /* Centrar el texto y agregar separación */
+    margin: 0 auto 2rem auto;
     line-height: 1.6;
 }
 
@@ -140,8 +152,31 @@
     transform: scale(1.05);
 }
 
-/* ✅ Responsivo */
+/* 🔹 Responsivo para móviles y tablets */
+@media (max-width: 1024px) {
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 80%;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
+    .about-container {
+        padding: 1.5rem;
+    }
+
     .about-header {
         flex-direction: column;
         text-align: center;
@@ -151,7 +186,38 @@
         width: 100%;
     }
 
+    .about-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-list li {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .join-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .community-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .community-section p {
+        font-size: 1rem;
+    }
+
+    .community-section button {
+        font-size: 1rem;
+        padding: 12px 24px;
     }
 }

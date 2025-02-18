@@ -1,39 +1,56 @@
+/* 🔹 Contenedor principal */
 .container {
     max-width: 900px;
     margin: 20px auto;
-    background: var(--bg-secondary); /* ✅ Se adapta al tema */
+    background: var(--bg-secondary); 
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: var(--text-primary); /* ✅ Texto adaptable */
+    color: var(--text-primary); 
+    overflow: hidden; /* Evita que se desborde contenido */
 }
 
+/* 🔹 Título principal */
 h1 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
-    color: var(--text-primary); /* ✅ Ahora se ve en modo oscuro */
+    color: var(--text-primary);
 }
 
+/* 🔹 Estilos generales de la tabla */
 .crypto-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
-    color: var(--text-primary); /* ✅ Se asegura de que el texto sea visible */
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.crypto-table th, .crypto-table td {
-    padding: 12px;
-    text-align: left;
-}
-
+/* 🔹 Encabezados de la tabla */
 .crypto-table thead {
-    background: var(--accent); /* ✅ Se adapta al tema */
+    background: var(--accent);
     color: white;
 }
 
-.crypto-table tbody tr {
+.crypto-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* 🔹 Celdas de contenido */
+.crypto-table td {
+    padding: 12px;
+    text-align: left;
     border-bottom: 1px solid var(--border);
+}
+
+/* 🔹 Filas de la tabla */
+.crypto-table tbody tr {
     transition: background 0.2s ease-in-out;
 }
 
@@ -41,9 +58,12 @@ h1 {
     background: rgba(106, 27, 154, 0.2);
 }
 
+/* 🔹 Imagen de la criptomoneda */
 .crypto-table img {
     border-radius: 50%;
     border: 2px solid var(--border);
+    width: 40px;
+    height: 40px;
 }
 
 /* 🔹 Modo Claro */
@@ -59,7 +79,89 @@ h1 {
 [data-theme="dark"] {
     --bg-primary: #1a1a1a;
     --bg-secondary: #2d2d2d;
-    --text-primary: #f8f9fa; /* ✅ Ahora el texto será visible en modo oscuro */
+    --text-primary: #f8f9fa;
     --border: #444;
     --accent: #bb86fc;
+}
+
+/* 🔹 Contenedor del contador */
+.contador-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-secondary);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* 🔹 Estilo del número del contador */
+.contador-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.contador-container h2:hover {
+    transform: scale(1.1);
+}
+
+/* 🔹 Instrucciones */
+.contador-instrucciones {
+    font-size: 14px;
+    margin-top: 8px;
+    color: var(--text-primary);
+}
+
+/* 🔹 Modo Responsive (Móvil y Tablets) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    /* 🔹 Hacer la tabla desplazable horizontalmente */
+    .crypto-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 12px;
+    }
+
+    /* 🔹 Ajustar el tamaño de las celdas */
+    .crypto-table th, .crypto-table td {
+        padding: 10px;
+        font-size: 14px;
+        min-width: 120px; /* Evita que las columnas sean demasiado estrechas */
+    }
+
+    /* 🔹 Centrar el contador y mejorar su legibilidad en móvil */
+    .contador-container {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+
+    .contador-container h2 {
+        font-size: 28px;
+    }
+
+    /* 🔹 Ajuste de imágenes en móvil */
+    .crypto-table img {
+        width: 30px;
+        height: 30px;
+    }
 }

@@ -1,57 +1,88 @@
+/* 🔹 Calculadora en Escritorio */
 .calculator {
-    position: absolute;
-    right: 20px;
-    top: 100px;
-    width: 300px;
-    padding: 20px;
-    background: var(--bg-secondary);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  width: 300px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 999; /* Asegura que esté por encima */
+}
+
+/* 🔹 Título de la calculadora */
+.calculator h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Inputs */
+.inputGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* 🔹 Botón */
+button {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+/* 🔹 Resultado */
+.result {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* 🔹 Modo Responsive (Móvil y Tablets) */
+@media screen and (max-width: 768px) {
+  .calculator {
+      position: relative;
+      right: auto;
+      top: auto;
+      width: 90%; /* Ocupa la mayor parte de la pantalla */
+      max-width: 350px; /* No se hace demasiado ancha */
+      margin: 20px auto; /* Centrada en la pantalla */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
-  
+
   .calculator h2 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
+      font-size: 1.3rem;
   }
-  
-  .inputGroup {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .inputGroup label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  
+
   .inputGroup input {
-    width: 100%;
-    padding: 8px;
-    border: 2px solid var(--border);
-    border-radius: 6px;
-    font-size: 1rem;
+      font-size: 0.9rem;
   }
-  
+
   button {
-    width: 100%;
-    padding: 10px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
+      font-size: 0.9rem;
+      padding: 8px;
   }
-  
-  button:hover {
-    background: var(--accent-hover);
-  }
-  
-  .result {
-    font-size: 1.2rem;
-    margin-top: 15px;
-  }
-  
+}

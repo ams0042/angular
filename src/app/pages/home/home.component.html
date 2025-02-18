@@ -1,26 +1,36 @@
+<div class="contador-container">
+  <h2 (click)="incrementarContador()" (contextmenu)="decrementarContador($event)">
+    {{ contador }}
+  </h2>
+  <p class="contador-instrucciones">
+    Click izquierdo para sumar<br>
+    Click derecho para restar
+  </p>
+</div>
+
 <div class="container">
-    <h1>Mercado de Criptomonedas</h1>
-    <p *ngIf="cryptos.length === 0">Cargando datos...</p>
+  <h1>Mercado de Criptomonedas</h1>
+  <p *ngIf="cryptos.length === 0">Cargando datos...</p>
 
-    <!-- ✅ AÑADIMOS LA CALCULADORA DE INTERÉS COMPUESTO -->
-    <app-compound-interest-calculator></app-compound-interest-calculator>
+  <!-- ✅ AÑADIMOS LA CALCULADORA DE INTERÉS COMPUESTO -->
+  <app-compound-interest-calculator></app-compound-interest-calculator>
 
-    <table *ngIf="cryptos.length > 0" class="crypto-table">
-      <thead>
-        <tr>
-          <th>Logo</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Capitalización</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let crypto of cryptos">
-          <td><img [src]="crypto.image" [alt]="crypto.name" width="40" /></td>
-          <td>{{ crypto.name }}</td>
-          <td>${{ crypto.current_price | number }}</td>
-          <td>${{ crypto.market_cap | number }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <table *ngIf="cryptos.length > 0" class="crypto-table">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Capitalización</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let crypto of cryptos">
+        <td><img [src]="crypto.image" [alt]="crypto.name" width="40" /></td>
+        <td>{{ crypto.name }}</td>
+        <td>${{ crypto.current_price | number }}</td>
+        <td>${{ crypto.market_cap | number }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
