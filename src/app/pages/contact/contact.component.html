@@ -1,0 +1,14 @@
+<div class="form-container">
+    <h1>Contáctanos</h1>
+    <p>¿Tienes alguna duda sobre inversiones en criptomonedas? ¡Escríbenos y te responderemos lo antes posible!</p>
+    
+    <form class="form">
+      <div class="input-group">
+        <input type="text" placeholder="Nombre" [(ngModel)]="formData.name" name="name" required />
+        <input type="email" placeholder="Email" [(ngModel)]="formData.email" name="email" required />
+      </div>
+      <textarea placeholder="Escribe tu mensaje aquí..." [(ngModel)]="formData.message" name="message" required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </div>
+  

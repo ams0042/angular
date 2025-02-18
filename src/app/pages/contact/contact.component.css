@@ -1,0 +1,110 @@
+/* Contenedor principal del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    background: var(--bg-secondary);
+    padding: 3rem;
+    border-radius: 18px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+  }
+  
+  /* Estilos del título y texto */
+  .form-container h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .form-container p {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* Formulario */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Contenedor de los inputs */
+  .input-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .input-group input {
+    flex: 1;
+  }
+  
+  /* Estilos de inputs y textarea */
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  .form input:focus,
+  .form textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(142, 68, 173, 0.3);
+    outline: none;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  /* Botón */
+  button {
+    padding: 14px 20px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 2rem;
+    }
+  
+    .input-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form input,
+    .form textarea {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 1rem;
+    }
+  }
+  

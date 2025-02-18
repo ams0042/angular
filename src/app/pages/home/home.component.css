@@ -1,0 +1,65 @@
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: var(--bg-secondary); /* ✅ Se adapta al tema */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary); /* ✅ Texto adaptable */
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-primary); /* ✅ Ahora se ve en modo oscuro */
+}
+
+.crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: var(--text-primary); /* ✅ Se asegura de que el texto sea visible */
+}
+
+.crypto-table th, .crypto-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.crypto-table thead {
+    background: var(--accent); /* ✅ Se adapta al tema */
+    color: white;
+}
+
+.crypto-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease-in-out;
+}
+
+.crypto-table tbody tr:hover {
+    background: rgba(106, 27, 154, 0.2);
+}
+
+.crypto-table img {
+    border-radius: 50%;
+    border: 2px solid var(--border);
+}
+
+/* 🔹 Modo Claro */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #333;
+    --border: #e0e0e0;
+    --accent: #6a1b9a;
+}
+
+/* 🔹 Modo Oscuro */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #f8f9fa; /* ✅ Ahora el texto será visible en modo oscuro */
+    --border: #444;
+    --accent: #bb86fc;
+}

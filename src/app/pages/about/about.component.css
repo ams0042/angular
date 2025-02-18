@@ -1,0 +1,157 @@
+.about-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Estilo del Header */
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    width: 45%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.about-text h1 span {
+    color: var(--text-primary);
+}
+
+/* ✅ Secciones */
+.about-section {
+    margin-bottom: 2rem;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* ✅ Lista de Beneficios */
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    font-size: 1.2rem;
+    padding: 10px;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ✅ Grid de Servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Botón de Llamado a la Acción */
+.about-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.join-btn {
+    background: var(--accent);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.join-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.community-section {
+    text-align: center;
+    margin-top: 3rem;  /* Espaciado superior */
+    padding: 2rem;
+}
+
+.community-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.community-section p {
+    font-size: 1.2rem;
+    color: #d1d1d1;
+    max-width: 700px;
+    margin: 0 auto 2rem auto; /* Centrar el texto y agregar separación */
+    line-height: 1.6;
+}
+
+.community-section button {
+    background: var(--accent);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.community-section button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* ✅ Responsivo */
+@media (max-width: 768px) {
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

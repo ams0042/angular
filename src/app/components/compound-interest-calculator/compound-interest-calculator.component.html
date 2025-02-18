@@ -1,0 +1,24 @@
+<div class="calculator">
+  <h2>Calculadora de Interés Compuesto</h2>
+
+  <div class="inputGroup">
+    <label for="principal">Cantidad Inicial (€)</label>
+    <input id="principal" type="number" [(ngModel)]="principal" />
+  </div>
+
+  <div class="inputGroup">
+    <label for="rate">Tasa de Interés Anual (%)</label>
+    <input id="rate" type="number" [(ngModel)]="rate" />
+  </div>
+
+  <div class="inputGroup">
+    <label for="years">Años</label>
+    <input id="years" type="number" [(ngModel)]="years" />
+  </div>
+
+  <button (click)="calculateInterest()">Calcular</button>
+
+  <p *ngIf="result !== null" class="result">
+    Monto final: <strong>€{{ result }}</strong>
+  </p>
+</div>
